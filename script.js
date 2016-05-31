@@ -89,7 +89,7 @@ var means = [
 	"Wire",
 	"Work",
 	"Wrench"
-	];
+];
 var evidence = [
 	"Air Conditioning",
 	"Ants",
@@ -292,4 +292,117 @@ var evidence = [
 	"Watch",
 	"Wig"
 ];
-console.log(means[Math.floor(Math.random() * means.length)]);
+var locations = [
+	[
+		"Living Room",
+		"Bedroom",
+		"Storeroom",
+		"Bathroom",
+		"Kitchen",
+		"Balcony"
+	],
+	[
+		"Vacation Home",
+		"Park",
+		"Supermarket",
+		"School",
+		"Woods",
+		"Bank"
+	], [
+		"Pub",
+		"Bookstore",
+		"Restaurant",
+		"Hotel",
+		"Hospital",
+		"Building Site"
+	], [
+		"Playground",
+		"Classroom",
+		"Dormitory",
+		"Cafeteria",
+		"Elevator",
+		"Toilet"
+	]
+]
+var playerNum = $("#playerNum option:selected").text() - 1;
+// console.log(means[Math.floor(Math.random() * means.length)]);
+
+$("#playReset").click(function() {
+	// if (confirm("Are you sure?")) {
+	reset();
+	// }
+});
+
+function reset() {
+	resetSetup();
+	eventSetup();
+}
+reset();
+function eventSetup(){
+	var eventsSetup = $("#events");
+	eventsSetup.empty();
+
+	//add header for each player
+	var cat = "";
+	cat += '<tr>';
+	for (var i = 0; i < 4; i++) {
+		cat += '<td colspan="2"><button type="button">Select</button></td>';
+	}
+	eventsSetup.append(cat + '</tr>');
+}
+function resetSetup(){
+	var playerTab = $("#playerTab");
+	playerTab.empty();
+
+	//add header for each player
+	var cat = "";
+	cat += '<tr>';
+	for (var i = 0; i < playerNum; i++) {
+		cat += '<td colspan="2"><input placeholder="Player ' + (i + 1) + '" style="width:auto" type="text" name="fname"><br></td>';
+	}
+	playerTab.append(cat + '</tr>');
+
+	//add means/evidence
+	var selectedEvidence = [];
+	var selectedMeans = [];
+
+	function selectedSetup(arr) {
+		while (arr.length < playerNum * 4) {
+			var temp = means[Math.floor(Math.random() * means.length)]
+			var dupe = false;
+			for (var i = 0; i < arr.length; i++) {
+				if (arr[i] === temp) {
+					dupe = true;
+				}
+			}
+			if (!dupe) {
+				arr.push(temp);
+			}
+		};
+	};
+	selectedSetup(selectedMeans);
+	selectedSetup(selectedEvidence);
+	// console.log(selectedEvidence);
+	// console.log(selectedMeans);
+	cat = '';
+	// playerTab.append('<tr>');
+	for (var i = 0; i < 4; i++) {
+		cat += '<tr>';
+		for (var j = 0; j < playerNum; j++) {
+			cat += '<td>' + selectedMeans[(i * playerNum) + j] + '</td>';
+			cat += '<td>' + selectedEvidence[(i * playerNum) + j] + '</td>';
+		}
+		cat += '</tr>';
+
+	}
+	playerTab.append(cat);
+	
+}
+
+$('td').click(function() {
+	if ($(this).hasClass('red')) {
+		$(this).removeClass('red');
+	} else {
+		$(this).addClass('red');
+	}
+});
