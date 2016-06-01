@@ -8,13 +8,22 @@ td {
 .red {
   background: red;
 }
+.purple {
+  background: purple;
+}
+.hideOnLoad {
+  display:none;
+}
+#addEvent{
+  float: right;
+}
 </style>
 <body>
 
 <div>
   <p>Players:
   <select id="playerNum">
-    <option value="4">4</option>
+    <option value="4" selected>4</option>
     <option value="5">5</option>
     <option value="6">6</option>
     <option value="7">7</option>
@@ -24,16 +33,33 @@ td {
     <option value="11">11</option>
     <option value="12">12</option>
   </select>
+  Clues:
+  <select id="clueNum">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4" selected>4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+  </select>
+  Seed:
+  <input placeholder="seed" id="seed">
   <button id="playReset">Play/Reset</button>
+  <button class="hideOnLoad" id="addEvent" onclick="addEvent()"type="button">Add Event</button>
 </p>
 
 </div>
 <table id="playerTab" border="1" style="width:100%">
 </table>
+<table id="permEvents" border="1" style="width:100%">
+</table>
 <table id="events" border="1" style="width:100%">
 </table>
-
+<table id="specialEvents" border="1" style="width:100%">
+</table>
 </body>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script src="seedrandom.js"></script>
 <script src="script.js"></script>
 </html>
