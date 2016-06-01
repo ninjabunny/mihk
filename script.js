@@ -551,13 +551,14 @@ var eventTiles = [
 var eventTilesCopy = eventTiles.slice();
 var playerNum = $("#playerNum option:selected").text() - 1;
 var clueNum = $("#clueNum option:selected").text();
+$('#seed').val(Math.floor(Math.random() * 1000));
 // console.log(means[Math.floor(Math.random() * means.length)]);
 
 $("#playReset").click(function() {
-	// if (confirm("Are you sure?")) {
-	$("table").empty();	
-	reset();
-	// }
+	if (confirm("Are you sure?")) {
+		$("table").empty();	
+		reset();
+	}
 });
 
 function reset() {
