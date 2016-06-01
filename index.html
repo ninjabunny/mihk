@@ -9,13 +9,28 @@ td {
   background: red;
 }
 .purple {
-  background: purple;
+  background: #D8BFD8;
 }
 .hideOnLoad {
   display:none;
 }
 #addEvent{
   float: right;
+}
+#playerTab tr{
+  background-color: #14f2cb;
+}
+#playerTab tr:nth-child(even) {
+  background-color: #FFCCCC;
+}
+#playerTab th {
+  background-color: white; 
+}
+#events tr:nth-child(even) {
+  background-color: #D3D3D3;
+}
+#permEvents tr:nth-child(even) {
+  background-color: #7BCC70;
 }
 </style>
 <body>
@@ -45,6 +60,7 @@ td {
   </select>
   Seed:
   <input placeholder="seed" id="seed">
+  Events: <input id="eventsCheck" type="checkbox" name="Special Events"> 
   <button id="playReset">Play/Reset</button>
   <button class="hideOnLoad" id="addEvent" onclick="addEvent()"type="button">Add Event</button>
 </p>
@@ -58,6 +74,12 @@ td {
 </table>
 <table id="specialEvents" border="1" style="width:100%">
 </table>
+<div>
+<p>Setup: always add murderer and forensic scientist, the rest are investigators. exception: if > 5 players, you MAY add Accomplice and/or Witness.</p>
+<p><input type="checkbox">Round 1: FS makes 1 selection for each category. Then each player makes presentation.</p>
+<p><input type="checkbox">Round 2: FS draws new category, then discards an old category, then makes a new selection on the new category. Discussion, then each player makes presentation.</p>
+<p><input type="checkbox">Round 3: Repeat round 2, except game ends immediately after last person makes their presentation.</p>
+</div>
 </body>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

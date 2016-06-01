@@ -619,7 +619,7 @@ function addEvent(){
 		}
 		eventsSetup.append(cat + '<td class="remover">X</td></tr>');
 	}
-	if(tempEvent[0] === "Special"){
+	if(tempEvent[0] === "Special" && $('#eventsCheck').is(':checked')){
 		var cat = '';
 		$("#specialEvents").append('<tr><th>'+ tempEvent[1] + '</th><td>'+ tempEvent[2] +'</td></tr>');
 	}
@@ -661,7 +661,7 @@ function resetSetup(){
 
 	//add header for each player
 	for (var i = 0; i < playerNum; i++) {
-		var cat = '<tr><th rowspan="2"><input placeholder="Player ' + (i + 1) + '" style="width:auto" type="text" name="fname"><br></th>';
+		var cat = '<tr><th rowspan="2"><input type="checkbox"><input placeholder="Player ' + (i + 1) + '" style="width:auto" type="text" name="fname"><br></th>';
 		for (var j = 0; j < clueNum; j++) {
 			cat+= '<td>'+ selectedMeans[(i * clueNum) + j] +'</td>';
 		}
