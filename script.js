@@ -473,7 +473,7 @@ var eventTiles = [
 	"Noticed by Bystander",
 	"Sudden sound",
 	"Prolonged sound",
-	"Smeall",
+	"Smell",
 	"Visual",
 	"Action",
 	"Nothing"
@@ -642,9 +642,9 @@ function resetSetup(){
 	var selectedEvidence = [];
 	var selectedMeans = [];
 
-	function selectedSetup(arr) {
+	function selectedSetup(arr, data) {
 		while (arr.length < playerNum * clueNum) {
-			var temp = means[Math.floor(Math.random() * means.length)]
+			var temp = data[Math.floor(Math.random() * data.length)]
 			var dupe = false;
 			for (var i = 0; i < arr.length; i++) {
 				if (arr[i] === temp) {
@@ -656,8 +656,8 @@ function resetSetup(){
 			}
 		};
 	};
-	selectedSetup(selectedMeans);
-	selectedSetup(selectedEvidence);
+	selectedSetup(selectedMeans, means);
+	selectedSetup(selectedEvidence, evidence);
 
 	//add header for each player
 	for (var i = 0; i < playerNum; i++) {
@@ -672,7 +672,7 @@ function resetSetup(){
 		playerTab.append(cat + '</tr>');
 	}
 
-	// console.log(selectedEvidence);
-	// console.log(selectedMeans);
+	console.log('evi' + selectedEvidence);
+	console.log('means' + selectedMeans);
 }
 
