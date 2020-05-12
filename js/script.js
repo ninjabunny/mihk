@@ -638,7 +638,7 @@ function addSceneTile(){
 	for (var i = 1; i < tempScene.length; i++) {
 		cat += '<td>' + tempScene[i] + '</td>';
 	}
-	cat += '<td class="remover">X</td>';
+	cat += '<td class="remover" width="3%">X</td>';
 	cat += '</tr>'
 	scenesSetup.append(cat);
 
@@ -654,7 +654,7 @@ function addEventTile(){
 	var cat = '<tr>';
 	cat += '<th>' + tempEvent[0] + '</th>';
 	cat += '<td>' + tempEvent[1] + '</td>';
-	cat += '<td class="remover">X</td>';
+	cat += '<td class="remover" width="3%">X</td>';
 	cat += '</tr>';
 	eventsSetup.append(cat);
 
@@ -722,6 +722,7 @@ function resetSetup(){
 			cat+= '<td>'+ selectedEvidence[(i * clueNum) + j] +'</td>';
 		}
 		cat += '</tr>';
+		cat += "<tr height = '10'></tr><tr></tr>"
 		playerTab.append(cat);
 	}
 

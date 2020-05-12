@@ -1,103 +1,88 @@
 <!DOCTYPE html>
 <html>
-<style>
-td {
-  text-align:center;
-  font-size: 18px;
-}
-.red {
-  background: red;
-}
-.purple {
-  background: #D8BFD8;
-}
-.hideOnLoad {
-  display:none;
-}
-#addEvent{
-  float: right;
-}
-#playerTab tr{
-  background-color: #14f2cb;
-}
-#playerTab tr:nth-child(even) {
-  background-color: #FFCCCC;
-}
-#playerTab th {
-  background-color: white; 
-}
-#events tr:nth-child(even) {
-  background-color: #D3D3D3;
-}
-#permEvents tr:nth-child(even) {
-  background-color: #7BCC70;
-}
-</style>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+</head>
+
 <body>
 
-<div>
-  <p>Players:
-  <select id="playerNum">
-    <option value="4" selected>4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-  </select>
-  Clues:
-  <select id="clueNum">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4" selected>4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-  </select>
-  Seed:
-  <input placeholder="seed" id="seed">
-  Events: <input id="eventsCheck" type="checkbox" name="Special Events"> 
-  <button id="playReset">Play/Reset</button>
-  <button class="hideOnLoad" id="addEvent" onclick="addTile()"type="button">Add Event</button>
-</p>
+    <div>
+        <p>Players:
+            <select id="playerNum">
+                <option value="4" selected>4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            Clues:
+            <select id="clueNum">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4" selected>4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+            Seed:
+            <input placeholder="seed" id="seed">
+            Events: <input id="eventsCheck" type="checkbox" name="Special Events">
+            <button id="playReset">Play/Reset</button>
+            <button class="hideOnLoad" id="addEvent" onclick="addTile()" type="button">Add Event</button>
+        </p>
 
-</div>
-<table id="playerTab" border="1" style="width:100%">
-</table>
-<table id="permEvents" border="1" style="width:100%">
-</table>
-<table id="events" border="1" style="width:100%">
-</table>
-<table id="specialEvents" border="1" style="width:100%">
-</table>
-<div>
-<p>Setup: always add murderer and forensic scientist, the rest are investigators. exception: if > 5 players, you MAY add Accomplice and/or Witness.</p>
-<p><input type="checkbox">Round 1: FS makes 1 selection for each category. Then each player makes presentation.</p>
-<p><input type="checkbox">Round 2: FS draws new category, then discards an old category, then makes a new selection on the new category. Discussion, then each player makes presentation.</p>
-<p><input type="checkbox">Round 3: Repeat round 2, except game ends immediately after last person makes their presentation.</p>
-</div>
-<div id="google_translate_element"></div>
+    </div>
+    <table id="playerTab" style="width:100%" class = "cards">
+    </table>
+    <table id="permEvents" style="width:100%">
+    </table>
+    <table id="events" style="width:100%">
+    </table>
+    <table id="specialEvents" style="width:100%">
+    </table>
+    <div>
+        <p>Setup: always add murderer and forensic scientist, the rest are investigators. exception: if > 5 players, you MAY add Accomplice and/or Witness.</p>
+        <p><input type="checkbox" class = "foot">Round 1: FS makes 1 selection for each category. Then each player makes presentation.</p>
+        <p><input type="checkbox" class = "foot">Round 2: FS draws new category, then discards an old category, then makes a new selection on the new category. Discussion, then each player makes presentation.</p>
+        <p><input type="checkbox" class = "foot">Round 3: Repeat round 2, except game ends immediately after last person makes their presentation.</p>
+    </div>
+    <div id="google_translate_element"></div>
 </body>
 <script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-}
-</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-48676831-9', 'auto');
-  ga('send', 'pageview');
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en'
+        }, 'google_translate_element');
+    }
 
 </script>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-<script src="seedrandom.js"></script>
-<script src="script.js"></script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-48676831-9', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/seedrandom.js"></script>
+<script src="js/script.js"></script>
+
+
 </html>
