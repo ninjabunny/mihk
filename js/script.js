@@ -90,6 +90,7 @@ var means = [
 	"Work",
 	"Wrench"
 ];
+
 var evidence = [
 	"Air Conditioning",
 	"Ants",
@@ -292,6 +293,7 @@ var evidence = [
 	"Watch",
 	"Wig"
 ];
+
 var locations = [
 	[
 		"Living Room",
@@ -324,6 +326,7 @@ var locations = [
 		"Toilet"
 	]
 ]
+
 var causeOfDeathTile = [
 	"Suffocation",
 	"Severe Injury",
@@ -332,9 +335,9 @@ var causeOfDeathTile = [
 	"Poisoning",
 	"Accident"
 ];
-var eventTiles = [
+
+var sceneTiles = [
 	[
-	"Brown",
 	"Motive of Crime",
 	"Hatred",
 	"Power",
@@ -343,7 +346,6 @@ var eventTiles = [
 	"Jealousy",
 	"Justice"
 	],[
-	"Brown",
 	"Weather",
 	"Sunny",
 	"Stormy",
@@ -352,7 +354,6 @@ var eventTiles = [
 	"Cold",
 	"Hot"
 	],[
-	"Brown",
 	"Hint on Corpse",
 	"Head",
 	"Chest",
@@ -361,7 +362,6 @@ var eventTiles = [
 	"Partial",
 	"All-over"
 	],[
-	"Brown",
 	"General Impression",
 	"Common",
 	"Creative",
@@ -370,7 +370,6 @@ var eventTiles = [
 	"Horrible",
 	"Suspenseful"
 	],[
-	"Brown",
 	"Corpse Condition",
 	"Still Warm",
 	"Stiff",
@@ -379,7 +378,6 @@ var eventTiles = [
 	"Intact",
 	"Twisted"
 	],[
-	"Brown",
 	"Victim's Identity",
 	"Child",
 	"Young Adult",
@@ -388,7 +386,6 @@ var eventTiles = [
 	"Male",
 	"Female"
 	],[
-	"Brown",
 	"Murderer's Personality",
 	"Arrogant",
 	"Despicable",
@@ -397,7 +394,6 @@ var eventTiles = [
 	"Forceful",
 	"Perverted"
 	],[
-	"Brown",
 	"State of The Scene",
 	"Bits and Pieces",
 	"Ashes",
@@ -406,7 +402,6 @@ var eventTiles = [
 	"Disorderly",
 	"Tidy"
 	],[
-	"Brown",
 	"Victim's Build",
 	"Large",
 	"Thin",
@@ -415,7 +410,6 @@ var eventTiles = [
 	"Disfigured",
 	"Fit"
 	],[
-	"Brown",
 	"Victim's Clothes",
 	"Neat",
 	"Untidy",
@@ -424,7 +418,6 @@ var eventTiles = [
 	"Bizarre",
 	"Naked"
 	],[
-	"Brown",
 	"Evidence Left Behind",
 	"Natural",
 	"Artistic",
@@ -433,7 +426,6 @@ var eventTiles = [
 	"Personal",
 	"Unrelated"
 	],[
-	"Brown",
 	"Victim's Expression",
 	"Peaceful",
 	"Struggling",
@@ -442,7 +434,6 @@ var eventTiles = [
 	"Blank",
 	"Angry"
 	],[
-	"Brown",
 	"Time of Death",
 	"Dawn",
 	"Morning",
@@ -451,7 +442,6 @@ var eventTiles = [
 	"Evening",
 	"Midnight"
 	],[
-	"Brown",
 	"Duration of Crime",
 	"Instanteous",
 	"Brief",
@@ -460,7 +450,6 @@ var eventTiles = [
 	"Few Days",
 	"Unclear"
 	],[
-	"Brown",
 	"Trace at the Scene",
 	"Fingerprint",
 	"Footprint",
@@ -469,7 +458,6 @@ var eventTiles = [
 	"Body Fluid",
 	"Scar"
 	],[
-	"Brown",
 	"Noticed by Bystander",
 	"Sudden sound",
 	"Prolonged sound",
@@ -478,7 +466,6 @@ var eventTiles = [
 	"Action",
 	"Nothing"
 	],[
-	"Brown",
 	"Social Relationship",
 	"Relatives",
 	"Friends",
@@ -487,7 +474,6 @@ var eventTiles = [
 	"Lovers",
 	"Strangers"
 	],[
-	"Brown",
 	"Victim's Occupation",
 	"Boss",
 	"Professional",
@@ -496,7 +482,6 @@ var eventTiles = [
 	"Unemployed",
 	"Retired"
 	],[
-	"Brown",
 	"In Progress",
 	"Entertainment",
 	"Relaxation",
@@ -505,7 +490,6 @@ var eventTiles = [
 	"Visit",
 	"Dining"
 	],[
-	"Brown",
 	"Sudden Incident",
 	"Power Failure",
 	"Fire",
@@ -514,7 +498,6 @@ var eventTiles = [
 	"Scream",
 	"Nothing"
 	],[
-	"Brown",
 	"Day of Crime",
 	"Weekday",
 	"Weekend",
@@ -522,41 +505,42 @@ var eventTiles = [
 	"Summer",
 	"Autumn",
 	"Winter"
-	],[
-	"Special",
+	]
+];
+
+var eventTiles = [
+	[
 	"Countdown",
 	"The Forensic Scientist draws 2 scene tiles and substitutes them for any 2 scene tiles in the display.  The game ends after the following PRESENTATION is finished."
 	],[
-	"Special",
 	"Erroneous Information",
 	"The Forensic Scientist chooses 1 of the scene tiles on display, and moves its marker to new item on the same tile.  Discard this event tile."
 	],[
-	"Special",
 	"A Good Twist",
 	"The player who correctly solved the crime last game immediately receives a chance to do so. This does not count toward their 1 chance this game. If no player is entitled to this advantage, the Forensic Scientist discards this tile and draws another.  Discard this event tile."
 	],[
-	"Special",
 	"A Useful Clue",
 	"The Forensic Scientist draws 5 Scene tiles, from which they choose 1 to replace any existing tile in the display. The selected tile cannot be another event. Discard this event tile."
 	],[
-	"Special",
 	"Ruled Out Evidence",
 	"Each player must flip over 1 of their own Clue Cards, removing it from consideration. This must be done without discussion. The murderer may not flip over the Key Evidence. (Take this action in counterclockwise order from the Forensic Scientist.) Discard this event tile."
 	],[
-	"Special",
 	"Secret Testimony",
 	"All players except the Forensic Scientist close their eyes.  The witness then opens their eyes, points to a scene tile to eliminate, then closes their eyes. All players then open their eyes and the Forensic Scientist discards the indicated tile and replaces it with a random one. Discard this event tile."
 	]
 ];
-var eventTilesCopy = eventTiles.slice();
-var playerNum = $("#playerNum option:selected").text() - 1;
-var clueNum = $("#clueNum option:selected").text();
+
+var sceneTilesCopy;
+var eventTilesCopy;
+var playerNum;
+var clueNum;
+
 $('#seed').val(Math.floor(Math.random() * 1000));
-// console.log(means[Math.floor(Math.random() * means.length)]);
 
 $("#playReset").click(function() {
 	if (confirm("Are you sure?")) {
-		$("table").empty();	
+		saveCurNames();
+		$("table").empty();
 		reset();
 	}
 });
@@ -565,15 +549,34 @@ function reset() {
 	Math.seedrandom($('#seed').val());
 	playerNum = $("#playerNum option:selected").text() - 1;
 	clueNum = $("#clueNum option:selected").text();
+	sceneTilesCopy = sceneTiles.slice();
 	eventTilesCopy = eventTiles.slice();
 	resetSetup();
 	eventSetup();
 }
-reset();
+
+// List of player names
+var playerNames = []
+// Save the current player names
+function saveCurNames() {
+	playerNames = [];
+	var nameBoxes = document.getElementsByName("fname");
+	for (var i = 0; i < nameBoxes.length; i++) {
+		playerNames.push(nameBoxes[i].value);
+	}
+}
+// Restore as many of the the saved player names as we can
+function restoreCurNames() {
+	var nameBoxes = document.getElementsByName("fname");
+
+	for (var i = 0; i < nameBoxes.length && i < playerNames.length; i++) {
+		nameBoxes[i].value = playerNames[i];
+	}
+}
+
 function eventSetup(){
 	var eventsSetup = $("#permEvents");
 	eventsSetup.empty();
-
 
 	//add hidden cause of DEATH
 	var cat = '<tr id="cod" class="hideOnLoad purple"><th>Cause of Death</th>';
@@ -599,30 +602,16 @@ function eventSetup(){
 				$(this).remove();
 			}
 		});
-		addEvent();
-		addEvent();
-		addEvent();
-		addEvent();
+		addSceneTile();
+		addSceneTile();
+		addSceneTile();
+		addSceneTile();
 		$("#permEvents tr").unbind();
 	});
-	
 }
 
-function addEvent(){
-	var eventsSetup = $("#events");
-	var specialEventsSetup = $("#specialEvents");
-	var tempEvent = eventTilesCopy.splice(Math.floor(Math.random() * eventTilesCopy.length),1)[0];
-	if(tempEvent[0] === "Brown"){
-		var cat = '<tr><th>'+ tempEvent[1] +'</th>/tr>';
-		for (var i = 2; i < tempEvent.length; i++) {
-			cat+= '<td>'+ tempEvent[i] +'</td>';
-		}
-		eventsSetup.append(cat + '<td class="remover">X</td></tr>');
-	}
-	if(tempEvent[0] === "Special" && $('#eventsCheck').is(':checked')){
-		var cat = '';
-		$("#specialEvents").append('<tr><th>'+ tempEvent[1] + '</th><td>'+ tempEvent[2] +'</td></tr>');
-	}
+// Reset click callback functions for td's and .remover's
+function resetClickFns() {
 	$('td').unbind().click(function() {
 		if ($(this).hasClass('red')) {
 			$(this).removeClass('red');
@@ -630,10 +619,68 @@ function addEvent(){
 			$(this).addClass('red');
 		}
 	});
-	$('.remover').click(function(){
+	$('.remover').unbind().click(function(){
 		$(this).parent('tr').remove();
 	});
 }
+
+// Adds a scene (non-event) tile
+function addSceneTile(){
+	var scenesSetup = $("#events");
+	if (sceneTilesCopy.length == 0) {
+		return;
+	}
+
+	var idx = Math.floor(Math.random() * sceneTilesCopy.length);
+	var tempScene = sceneTilesCopy.splice(idx, 1)[0];
+	var cat = '<tr>';
+	cat += '<th>' + tempScene[0] + '</th>/tr>';
+	for (var i = 1; i < tempScene.length; i++) {
+		cat += '<td>' + tempScene[i] + '</td>';
+	}
+	cat += '<td class="remover" width="3%">X</td>';
+	cat += '</tr>'
+	scenesSetup.append(cat);
+
+	resetClickFns();
+}
+
+// Adds an event tile
+function addEventTile(){
+	var eventsSetup = $("#specialEvents");
+
+	var idx = Math.floor(Math.random() * eventTilesCopy.length);
+	var tempEvent = eventTilesCopy.splice(idx, 1)[0];
+	var cat = '<tr>';
+	cat += '<th>' + tempEvent[0] + '</th>';
+	cat += '<td>' + tempEvent[1] + '</td>';
+	cat += '<td class="remover" width="3%">X</td>';
+	cat += '</tr>';
+	eventsSetup.append(cat);
+
+	resetClickFns();
+}
+
+// Adds a scene or event tile
+// If events are not selected, will always add a scene tile
+// Otherwise, randomly adds a scene or event tile based on the number
+// of each remaining
+function addTile(){
+	if ($('#eventsCheck').is(':checked')) {
+		// Events are selected, choose randomly between the remaining tiles
+		var totalTiles = sceneTilesCopy.length + eventTilesCopy.length;
+		var idx = Math.floor(Math.random() * totalTiles);
+		if (idx < sceneTilesCopy.length) {
+			addSceneTile();
+		} else {
+			addEventTile();
+		}
+	} else {
+		// Events are not selected. Add a scene tile.
+		addSceneTile();
+	}
+}
+
 function resetSetup(){
 	var playerTab = $("#playerTab");
 	playerTab.empty();
@@ -661,7 +708,12 @@ function resetSetup(){
 
 	//add header for each player
 	for (var i = 0; i < playerNum; i++) {
-		var cat = '<tr><th rowspan="2"><input type="checkbox"><input placeholder="Player ' + (i + 1) + '" style="width:auto" type="text" name="fname"><br></th>';
+		var cat = '<tr>';
+		cat += '<th rowspan="2">';
+		cat += '<input type="checkbox">';
+		cat += '<input placeholder="Player ' + (i + 1) + '" ';
+		cat += 'style="width:auto" type="text" name="fname"><br>';
+		cat += '</th>';
 		for (var j = 0; j < clueNum; j++) {
 			cat+= '<td>'+ selectedMeans[(i * clueNum) + j] +'</td>';
 		}
@@ -669,10 +721,15 @@ function resetSetup(){
 		for (var j = 0; j < clueNum; j++) {
 			cat+= '<td>'+ selectedEvidence[(i * clueNum) + j] +'</td>';
 		}
-		playerTab.append(cat + '</tr>');
+		cat += '</tr>';
+		cat += "<tr height = '10'></tr><tr></tr>"
+		playerTab.append(cat);
 	}
+
+	restoreCurNames();
 
 	console.log('evi' + selectedEvidence);
 	console.log('means' + selectedMeans);
 }
 
+reset();

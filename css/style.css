@@ -1,0 +1,138 @@
+body, option, select, input{
+    font-family: 'Inconsolata', monospace;
+}
+
+button {
+  background-color: mediumseagreen;
+  border: none;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  font-size: 16px;
+  font-family: 'Inconsolata', monospace;
+}
+th,
+td {
+    text-align: center;
+    font-size: 1.15em;
+    padding:.5em;
+}
+
+.cards td{
+    border-radius: 10px
+}
+th{
+    width: 20%;
+}
+
+
+input[type=text] {
+  border: none;
+  border-bottom: 2px solid gray;
+  font-family: 'Inconsolata', monospace;
+  font-size: 1em;
+  width: 30%;
+  margin-left: 10px;
+   
+}
+input[type=text]:focus {
+  outline:none;
+
+}
+.foot{
+    margin-right: 20px;
+}
+
+table {
+    
+    margin-bottom: .5em;
+}
+
+input[type=checkbox] {
+         position: relative;
+	       cursor: pointer;
+         margin-bottom: 6px;
+    }
+    input[type=checkbox]:before {
+         content: "";
+         display: inline-block;
+         position: absolute;
+         width: 16px;
+         height: 16px;
+         top: 0;
+         left: 0;
+         border: 2px solid #555555;
+         border-radius: 3px;
+         background-color: white;
+}
+    input[type=checkbox]:checked:after {
+         content: "";
+         display: block;
+         width: 5px;
+         height: 10px;
+         border: solid black;
+         border-width: 0 2px 2px 0;
+         -webkit-transform: rotate(45deg);
+         -ms-transform: rotate(45deg);
+         transform: rotate(45deg);
+         position: absolute;
+         top: 2px;
+         left: 6px;
+}
+
+
+.red {
+    background: #e62929;
+}
+
+.purple {
+    background: #d47db6;
+}
+
+.hideOnLoad {
+    display: none;
+}
+
+#addEvent {
+    float: right;
+}
+
+#playerTab tr {
+    background-color: #9bbfd1;
+}
+#playReset{
+    margin-left: 20px;
+    
+}
+#playerTab tr:nth-child(even) {
+    background-color: #e0a4a4;
+}
+
+#playerTab th {
+    background-color: white;
+}
+#events tr{
+    background-color: #f7f6f5;
+}
+#events tr:nth-child(even) {
+    background-color: #d1cdc9;
+}
+
+.deleteMe{
+    background-color: #e1f5e2;
+}
+
+#permEvents tr:nth-child(even) {
+    background-color: #7BCC70;
+}
+#specialEvents{
+    border: solid 1px black;
+}
+#specialEvents tr{
+    background-color: #f7f6f5;
+}
+#specialEvents tr:nth-child(even) {
+    background-color: #d1cdc9;
+}
